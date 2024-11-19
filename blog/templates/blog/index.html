@@ -1,0 +1,34 @@
+{%extends "base.html" %}
+{% load static%}
+
+{%block title%}
+My Blog
+{%endblock%}
+
+{%block css_files%}
+<link rel="stylesheet" href="{% static "blog/post.css"%}" />
+<link rel="stylesheet" href="{% static "blog/index.css"%}" />
+{%endblock%}
+
+{%block content%}
+<section id="welcome">
+<header>
+    <img src="{%static "blog/images/lukas.png"%}" alt="Lukas - The Author Of This Blog"/>
+    <h2>LUKAS'S BLOG</h2>
+</header>
+<p>Hi, I am Lukas and I love to blog about languages and the world!</p>
+</section>
+<section id="latest-posts">
+    <h2>My Latest Thoughts</h2>
+    <ul>
+    {%for post in posts%}
+       {%include "blog/includes/post.html"%}
+    {%endfor%}
+    </ul>
+</section>
+<section id="about">
+   <h2>What I Do</h2>
+   <p>lfkdslkfjfkldsvklds</p>
+   <p>My goal is blablabla</p>
+</section>
+{%endblock%}
